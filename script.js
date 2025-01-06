@@ -20,10 +20,26 @@ function showLibrary() {
     bookCard.classList.add("bookcard");
     bookCard.innerHTML = `
       <h2>${book.title}</h2>
-      <p>${book.author}<p>
-      <p>${book.length} pages<p>
+      <p>by ${book.author}<p>
+      <p class="length">${book.length} pages<p>
+      <div class="buttons">
+        <button class="read" data-index="${index}">Read: ${book.read ? 'Yes' : 'No'}</button>
+        <button class="remove" data-index="${index}">Remove</button>
+      </div>
     `;
     books.appendChild(bookCard);
+
+    const read = bookCard.querySelector(".read");
+    read.addEventListener("click", () => {
+      book.read = !book.read;
+      showLibrary();
+    });
+
+    const remove = bookCard.querySelector(".remove");
+    remove.addEventListener("click", () => {
+      myLibrary.splice(index, 1);
+      showLibrary();
+    });
   })
 }
 
@@ -36,8 +52,9 @@ const myLibrary = [
 
 
 
-const addBookToLibrary = function () {
-  const newBook = new Book(bookTitle.value, bookAuthor.value, bookLength)
+const addBookToLibrary = function (event) {
+  event.preventDefault();
+  const newBook = new Book(bookTitle.value, bookAuthor.value, bookLength.value);
   myLibrary.push(newBook);
   bookTitle.value = "";
   bookAuthor.value = "";
