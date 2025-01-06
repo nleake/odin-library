@@ -1,0 +1,108 @@
+/* Universal Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Lora", Georgia, "Times New Roman", Times, serif;
+  line-height: 1.45;
+  color: var(--ink);
+  background-color: var(--offwhite);
+  font-weight: 400;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+p {
+  max-width: 65ch;
+  text-wrap: pretty;
+}
+a {
+  text-decoration: none;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+h1 {
+  font-family: "Anton", Impact, Haettenschweiler, "Arial Narrow Bold",
+    sans-serif;
+  font-weight: 400;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bookrecords {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  button {
+    background-color: rgb(123, 97, 146);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 2px;
+    align-self: flex-end;
+  }
+}
+
+#myForm {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 10px;
+  label {
+    display: block;
+  }
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+}
+
+#books {
+  margin-top: 2rem;
+  display: flex;
+  justify-content:center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.bookcard {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgb(246, 246, 255);
+  color: #131212;
+}
